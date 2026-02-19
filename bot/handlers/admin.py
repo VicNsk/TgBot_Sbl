@@ -9,7 +9,6 @@ from bot.utils.exceptions import BlacklistError
 router = Router(name="admin_handlers")
 
 class AdminFilter:
-    """Проверяет, является ли пользователь администратором."""
     def __init__(self):
         self.admin_ids = Config.ADMINS
 
@@ -18,12 +17,7 @@ class AdminFilter:
 
 @router.message(AdminFilter(), Command("settings"))
 async def cmd_settings(message: Message):
-    """Админ-панель (только для администраторов)."""
-    await message.answer("⚙️ Админ-панель:\n"
-                        "/blacklist - просмотреть ЧС\n"
-                        "/blacklist add <id> - добавить в ЧС\n"
-                        "/blacklist remove <id> - удалить из ЧС")
-
+    await message.answer("⚙️ Админ-панель")
 
 @router.message(AdminFilter(), Command("blacklist"))
 async def cmd_blacklist(message: Message, session: AsyncSession):
