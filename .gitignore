@@ -1,0 +1,29 @@
+# project_root/.gitignore
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Системные файлы
+__pycache__/
+*.pyc
+.DS_Store
+
+# Конфигурация
+.env
+.env.local
+*.env.backup
+
+# Логи и БД
+bot.log
+bot.db
+*.sqlite
+
+# Инструменты
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Разное
+CMD.md
+TODO.md
