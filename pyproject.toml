@@ -23,6 +23,11 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["bot"]
 
+[tool.pytest.ini_options]
+addopts = "-v --import-mode=importlib"
+testpaths = ["tests"]
+python_files = ["test_*.py"]сдуфк
+
 [tool.ruff]
 select = ["E", "F", "I", "W"]
 ignore = ["E501"]  # Длина строк
