@@ -49,3 +49,14 @@ async def handle_user_message(message: Message):
         f"🆔 <b>ID:</b> {message.from_user.id}\n"
         f"💬 <b>Текст:</b> {message.text}"
     )
+
+@router.message(Command("start"))
+async def cmd_start(message: Message):
+    logger.info(
+        "User started bot",
+        extra={
+            "user_id": message.from_user.id,
+            "username": message.from_user.username
+        }
+    )
+    await message.answer("👋 Добро пожаловать в бот!")

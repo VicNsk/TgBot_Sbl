@@ -5,12 +5,16 @@ from bot.database.models import User, Blacklist
 
 from aiogram import Dispatcher
 from aiogram.types import ErrorEvent
-from bot.utils.logging_setup import get_logger
 from bot.utils.exceptions import BlacklistError
+from bot.utils.logging_setup import setup_logging, get_logger
 
 logger = get_logger(__name__)
 
 async def main():
+    # Настройка логгера ДО инициализации других компонентов
+    setup_logging()
+    logger.info("Bot started", extra={"mode": "polling" if not Config.USE_WEBHOOK else "webhook"})
+
     # Инициализация БД
     db = Database()
     await db.init_models()
