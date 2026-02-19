@@ -1,5 +1,7 @@
 pyproject.toml
 bot/database/__init__.py
+bot/database/base.py
+bot/database/models.py
 bot/handlers/__init__.py
 bot/telegram_bot_template.egg-info/PKG-INFO
 bot/telegram_bot_template.egg-info/SOURCES.txt

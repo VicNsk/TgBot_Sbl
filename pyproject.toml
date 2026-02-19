@@ -23,16 +23,13 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["bot"]
 
-[tool.pytest.ini_options]
-addopts = "-v --import-mode=importlib"
-testpaths = ["tests"]
-python_files = ["test_*.py"]сдуфк
-
+# Ruff configuration (Python linter)
 [tool.ruff]
 select = ["E", "F", "I", "W"]
-ignore = ["E501"]  # Длина строк
+ignore = ["E501"]  # Отключаем проверку длины строк
 line-length = 120
 
+# MyPy configuration (type checker)
 [tool.mypy]
 strict = true
 exclude = ["tests/"]
